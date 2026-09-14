@@ -1,57 +1,206 @@
 .containerGallaryGridHome {
   width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 60px 20px;
   box-sizing: border-box;
+  font-family: var(--font-playfair), 'Montserrat', sans-serif;
+  background-color: var(--background-color, #ffffff);
+}
+
+.headerGallaryGridHome {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.headerLeftGallaryGridHome {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.subtitleGallaryGridHome {
+  font-size: 11px;
+  color: var(--text-muted, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.titleGallaryGridHome {
+  font-family: var(--font-playfair), sans-serif;
+  font-size: 32px;
+  color: var(--text-main, #111827);
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.headerRightGallaryGridHome {
+  margin-bottom: 5px;
+}
+
+.viewAllLinkGallaryGridHome {
+  font-size: 12px;
+  color: var(--text-main, #111827);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.3s ease;
+}
+
+.viewAllLinkGallaryGridHome:hover {
+  opacity: 0.7;
+}
+
+.arrowGallaryGridHome {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.viewAllLinkGallaryGridHome:hover .arrowGallaryGridHome {
+  transform: translateX(4px);
 }
 
 .gridGallaryGridHome {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px; 
+  background-color: #ffffff; 
 }
 
 .cardGallaryGridHome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.imageWrapperGallaryGridHome {
+  position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 220px;
   overflow: hidden;
-  margin-bottom: 12px;
+  display: flex;
+  background-color: #503c30db; 
+  cursor: pointer;
 }
 
-.imageGallaryGridHome {
-  width: 100%;
+.bgImageGallaryGridHome {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  z-index: 1;
+  transition: transform 0.6s ease;
 }
 
-.textGallaryGridHome {
-  font-family: var(--font-poppins), 'Montserrat', sans-serif;
-  font-size: var(--beyvora-font-paraSM);
-  color: var(--text-main);
+.cardGallaryGridHome:hover .bgImageGallaryGridHome {
+  transform: scale(1.08);
+}
+
+.overlayGallaryGridHome {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(93, 52, 9) 0%, rgba(124, 72, 19, 0.9) 35%, rgba(180, 114, 48, 0) 80%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+
+.topContentGallaryGridHome {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cardNumberGallaryGridHome {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.cardTitleGallaryGridHome {
+   font-family: var(--font-playfair), sans-serif;
+  font-size: var(--beyvora-font-headSM);
+  color: #ffffff;
+  font-weight: 400;
   margin: 0;
-  padding: 0;
-  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  max-width: 160px;
 }
 
-@media (max-width: 992px) {
+.cardDescGallaryGridHome {
+  font-size: var(--beyvora-font-paraESM);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-weight: 300;
+  max-width: 180px;
+  line-height: 1.5;
+}
+
+.exploreLinkGallaryGridHome {
+  font-size: 11px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.3s ease;
+}
+
+.exploreLinkGallaryGridHome:hover {
+  opacity: 0.7;
+}
+
+.exploreArrowGallaryGridHome {
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.cardGallaryGridHome:hover .exploreArrowGallaryGridHome {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
   .gridGallaryGridHome {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .headerGallaryGridHome {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
+  }
+
+  .titleGallaryGridHome {
+    font-size: 26px;
   }
 }
 
 @media (max-width: 576px) {
   .gridGallaryGridHome {
-    grid-template-columns:  repeat(2, 1fr) ;
-    padding: 10px;
-    gap: 25px;
+    grid-template-columns: 1fr;
+  }
+  
+  .cardGallaryGridHome {
+    height: 320px;
   }
 }

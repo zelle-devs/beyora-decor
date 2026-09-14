@@ -1,0 +1,273 @@
+.containerProductsCategorySection {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  background-color: var(--background-color, #ffffff);
+}
+
+.gridProductsCategorySection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.cardProductsCategorySection {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  /* group: true; */
+}
+
+.imageWrapperProductsCategorySection {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.imageProductsCategorySection {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.cardProductsCategorySection:hover .imageProductsCategorySection {
+  transform: scale(1.05);
+}
+
+.heartBtnProductsCategorySection {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.heartBtnProductsCategorySection:hover {
+  transform: scale(1.1);
+  color: var(--beyvora-gold, #C2A56A);
+}
+
+.cardDetailsProductsCategorySection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.textLeftProductsCategorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardTitleProductsCategorySection {
+  font-size: var(--beyvora-font-paraESM, 12px);
+  color: var(--text-main, #1C1C1C);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.cardPriceProductsCategorySection {
+  font-size: var(--beyvora-font-paraESM, 12px);
+  color: var(--text-muted, #7A816A);
+  font-weight: 500;
+  margin: 0;
+}
+
+.iconRightProductsCategorySection {
+  color: var(--text-muted, #7A816A);
+}
+
+.arrowProductsCategorySection {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.cardProductsCategorySection:hover .arrowProductsCategorySection {
+  transform: translateX(4px);
+}
+
+.promoBannerProductsCategorySection {
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.promoImageWrapperProductsCategorySection {
+  flex: 1.2;
+  position: relative;
+  min-height: 250px;
+}
+
+.promoImageProductsCategorySection {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.promoImageOverlayTextProductsCategorySection {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.promoImageTitleProductsCategorySection {
+   font-family: var(--font-playfair), 'Times New Roman', serif;
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.promoImageLineProductsCategorySection {
+  width: 40px;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.promoTextWrapperProductsCategorySection {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.promoSubtitleProductsCategorySection {
+  font-size: 10px;
+  color: var(--text-muted, #7A816A);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.promoTitleProductsCategorySection {
+  font-family: var(--font-playfair), 'Times New Roman', serif;
+  font-size: 32px;
+  color: var(--text-main, #1C1C1C);
+  font-weight: 400;
+  margin: 0;
+  margin-top: -10px;
+  line-height: 1.1;
+}
+
+.promoDescProductsCategorySection {
+  font-size: var(--beyvora-font-paraESM, 12px);
+  color: var(--text-muted, #7A816A);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 90%;
+}
+
+.promoBtnProductsCategorySection {
+  margin-top: 8px;
+  background-color: transparent;
+  color: var(--text-main, #1C1C1C);
+  border: 1px solid var(--text-muted, #7A816A);
+  padding: 10px 20px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: var(--font-poppins);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.promoBtnProductsCategorySection:hover {
+  background-color: var(--beyvora-gold, #1C1C1C);
+  color: var(--beyvora-black);
+  border-color: var(--beyvora-gold, #1C1C1C);
+}
+
+.promoFeaturesWrapperProductsCategorySection {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  border-left: 1px solid #e5e7eb;
+  padding-left: 40px;
+}
+
+.featureItemProductsCategorySection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.featureIconProductsCategorySection {
+  color: var(--text-main, #1C1C1C);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureTextProductsCategorySection {
+  font-size: 10px;
+  color: var(--text-main, #1C1C1C);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .promoBannerProductsCategorySection {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .promoFeaturesWrapperProductsCategorySection {
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+    padding-left: 0;
+    padding-top: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .gridProductsCategorySection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .promoFeaturesWrapperProductsCategorySection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .gridProductsCategorySection {
+    grid-template-columns: 1fr;
+  }
+  
+  .promoTitleProductsCategorySection {
+    font-size: 28px;
+  }
+}

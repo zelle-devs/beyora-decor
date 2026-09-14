@@ -1,0 +1,114 @@
+.containerHomeTagLineSection {
+  width: 100%;
+  background-color: var(--background-color); 
+  padding: 80px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.contentHomeTagLineSection {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.leftSideHomeTagLineSection {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.subtitleHomeTagLineSection {
+  font-family: var(--font-poppins), 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: var(--text-muted, #9ca3af);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.titleHomeTagLineSection {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 42px;
+  color: var(--text-main, #111827);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rightSideHomeTagLineSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 480px;
+}
+
+.descriptionHomeTagLineSection {
+  font-family: var(--font-poppins), 'Montserrat', sans-serif;
+  font-size: var(--beyvora-font-paraSM, 14px);
+  color: var(--text-muted, #4b5563);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
+.linkHomeTagLineSection {
+  font-family: var(--font-poppins), 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: var(--text-main, #111827);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.linkHomeTagLineSection:hover {
+  opacity: 0.7;
+}
+
+.arrowHomeTagLineSection {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.linkHomeTagLineSection:hover .arrowHomeTagLineSection {
+  transform: translateX(4px);
+}
+
+@media (max-width: 992px) {
+  .contentHomeTagLineSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  
+  .rightSideHomeTagLineSection {
+    max-width: 100%;
+  }
+  
+  .titleHomeTagLineSection {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 576px) {
+  .containerHomeTagLineSection {
+    padding: 50px 20px;
+  }
+  
+  .titleHomeTagLineSection {
+    font-size: 28px;
+  }
+}
