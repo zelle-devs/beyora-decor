@@ -3,21 +3,25 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { useRouter } from 'next/navigation';
-
+import { useCartCartSidebar } from '@/app/CartContext'; // Path theek kar lena
+import { usePageTransition } from '@/app/TransitionContext';
 function Header() {
     const router = useRouter();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-     const [isScrolled, setIsScrolled] = useState(false);
-    // Lock body scroll while drawer is open
+    const [isScrolled, setIsScrolled] = useState(false);
+    const { navigate } = usePageTransition();
+    // Yahan Context call ho raha hai
+    const { openCartSidebar, cartItemsCartSidebar } = useCartCartSidebar();
 
-     useEffect(() => {
+    useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 0);
         };
-        handleScroll(); // set correct state on mount (e.g. page refreshed mid-scroll)
+        handleScroll();
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
     useEffect(() => {
         if (isDrawerOpen) {
             document.body.style.overflow = 'hidden';
@@ -36,18 +40,16 @@ function Header() {
     };
 
     const navLinks = [
-        { href: '#new', label: 'New' },
-        { href: '#home', label: 'For the Home' },
-        { href: '#office', label: 'Office' },
-        { href: '#tech', label: 'Tech' },
-        { href: '#apparel', label: 'Apparel & Accessories' },
-        { href: '#prints', label: 'Prints & Artists' },
-        { href: '#books', label: 'Books' },
-        { href: '#kids', label: 'Kids & Games' },
-        { href: '/shop-all-products', label: 'Only at Beyvora' },
-        { href: '#gifts', label: 'Gifts' },
-        { href: '#sale', label: 'Sale' },
+        { href: '/shop-all-products', label: 'Textured Wall Decor' },
+        { href: '/shop-all-products', label: 'LED Wall Decor' },
+        { href: '/shop-all-products', label: 'Islamic Calligraphy' },
+        { href: '/shop-all-products', label: 'Metal Wall Decor' },
+        { href: '/shop-all-products', label: 'Metal Wall Clocks' },
+        { href: '/shop-all-products', label: 'Neon Wall Decor' },
     ];
+
+    // Badge ki total quantity calculation
+    const totalItemsInCart = cartItemsCartSidebar.reduce((total, item) => total + item.quantityCartSidebar, 0);
 
     return (
         <>
@@ -66,14 +68,12 @@ function Header() {
                         </ul>
                     </div>
                 </div>
-
             </div>
+
             <header className={`BevoraMainHeader-wrapper ${isScrolled ? 'is-scrolled' : ''}`}>
                 <div className="BevoraMainHeader-container">
-
                     <div className="BevoraMainHeader-top">
 
-                        {/* Mobile hamburger toggle - visible only on mobile via CSS */}
                         <button
                             className={`BevoraMainHeader-hamburger ${isDrawerOpen ? 'is-active' : ''}`}
                             onClick={() => setIsDrawerOpen(true)}
@@ -90,7 +90,6 @@ function Header() {
                         </div>
 
                         <div className="BevoraMainHeader-actions">
-
                             <div className="BevoraMainHeader-search-container">
                                 <input
                                     type="text"
@@ -104,27 +103,43 @@ function Header() {
                             </div>
 
                             <div className="BevoraMainHeader-icons">
-
                                 <svg className="BevoraMainHeader-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg>
+
                                 <svg className="BevoraMainHeader-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                                 </svg>
-                                <svg className="BevoraMainHeader-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
+
+                                {/* Cart Icon with Badge and Click Handler */}
+                                <div style={{ position: 'relative', cursor: 'pointer', display: 'flex', alignItems: 'center' }} onClick={openCartSidebar}>
+                                    <svg className="BevoraMainHeader-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <circle cx="9" cy="21" r="1"></circle>
+                                        <circle cx="20" cy="21" r="1"></circle>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                    </svg>
+                                    {totalItemsInCart > 0 && (
+                                        <span style={{ position: 'absolute', top: '-8px', right: '-8px', background: '#000', color: '#fff', fontSize: '10px', borderRadius: '50%', padding: '2px 6px', fontWeight: 'bold' }}>
+                                            {totalItemsInCart}
+                                        </span>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Desktop nav */}
                     <nav className="BevoraMainHeader-nav">
                         {navLinks.map((link) => (
-                            <a key={link.href} href={link.href} className="BevoraMainHeader-nav-link">
+                            <a
+                                key={link.label}
+                                href={link.href}
+                                className="BevoraMainHeader-nav-link"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    navigate(link.href, link.label);
+                                }}
+                            >
                                 {link.label}
                             </a>
                         ))}
@@ -132,17 +147,15 @@ function Header() {
 
                 </div>
 
-                {/* Mobile drawer overlay */}
                 <div
                     className={`BevoraMainHeader-overlay ${isDrawerOpen ? 'is-visible' : ''}`}
                     onClick={closeDrawer}
                     aria-hidden="true"
                 ></div>
 
-                {/* Mobile drawer panel */}
                 <aside className={`BevoraMainHeader-drawer ${isDrawerOpen ? 'is-open' : ''}`}>
                     <div className="BevoraMainHeader-drawer-top">
-                        <div className="BevoraMainHeader-drawer-logo" onClick={() => router.push('/') == setIsDrawerOpen(false)}>
+                        <div className="BevoraMainHeader-drawer-logo" onClick={() => { router.push('/'); setIsDrawerOpen(false); }}>
                             <strong>Beyvora</strong> <span>Decor Store</span>
                         </div>
                         <button
@@ -191,7 +204,7 @@ function Header() {
                         </ul>
                     </div>
                 </aside>
-            </header>
+            </header >
         </>
     );
 }

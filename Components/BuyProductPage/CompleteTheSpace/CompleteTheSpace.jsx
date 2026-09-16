@@ -5,25 +5,25 @@ function CompleteTheSpace() {
   const productsCompleteTheSpace = [
     {
       id: 1,
-      title: 'Desert Flow',
+      title: 'Metal Wall Clock',
       price: 'PKR 26,000',
       img: '/HomeGridGalleryNewLayout1.png'
     },
     {
       id: 2,
-      title: 'Golden Ridge',
+      title: 'Islamic Calligraphy',
       price: 'PKR 32,000',
       img: '/HomeGridGalleryNewLayout2.png'
     },
     {
       id: 3,
-      title: 'Earth Layers',
+      title: 'Metal Wall Decor',
       price: 'PKR 27,000',
       img: '/HomeGridGalleryNewLayout3.png'
     },
     {
       id: 4,
-      title: 'Tidal Form',
+      title: 'LED Wall Decor',
       price: 'PKR 29,000',
       img: '/HomeGridGalleryNewLayout5.png'
     }

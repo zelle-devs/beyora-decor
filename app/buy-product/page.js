@@ -1,4 +1,3 @@
-import BuyProductPage from '@/Components/BuyProductPage/BuyProductPage'
 import CompleteTheSpace from '@/Components/BuyProductPage/CompleteTheSpace/CompleteTheSpace'
 import MakeItYoursSection from '@/Components/BuyProductPage/MakeItYoursSection/MakeItYoursSection'
 import SeeYourSpace from '@/Components/BuyProductPage/SeeYourSpace/SeeYourSpace'

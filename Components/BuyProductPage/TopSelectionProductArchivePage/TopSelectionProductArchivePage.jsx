@@ -1,12 +1,16 @@
 "use client"
 import React, { useState } from 'react';
 import './TopSelectionProductArchivePage.css';
+import { useCartCartSidebar } from '@/app/CartContext'; // Path apne project ke hisaab se theek kar lijiye ga
 
 function TopSelectionProductArchivePage() {
   const [activeImageIndexTopSelectionProductArchivePage, setActiveImageIndexTopSelectionProductArchivePage] = useState(0);
   const [selectedSizeTopSelectionProductArchivePage, setSelectedSizeTopSelectionProductArchivePage] = useState('Large');
   const [selectedFinishTopSelectionProductArchivePage, setSelectedFinishTopSelectionProductArchivePage] = useState('Natural');
   const [quantityTopSelectionProductArchivePage, setQuantityTopSelectionProductArchivePage] = useState(1);
+
+  // 👇 Context se addItem function nikaal liya
+  const { addItemCartSidebar } = useCartCartSidebar();
 
   const imagesTopSelectionProductArchivePage = [
     "/HomeGridGalleryNewLayout1.png",
@@ -49,6 +53,23 @@ function TopSelectionProductArchivePage() {
 
   const increaseQuantityTopSelectionProductArchivePage = () => {
     setQuantityTopSelectionProductArchivePage(quantityTopSelectionProductArchivePage + 1);
+  };
+
+  // 👇 Add to Cart ka function jo data ko format karke Context mein bhejega
+  const handleAddToCart = () => {
+    const product = {
+      // ID unique banani zaroori hai, isliye Size aur Finish ko add kar diya
+      // Taake agar user same product alag size mein le toh wo alag item consider ho
+      idCartSidebar: `sand-dunes-${selectedSizeTopSelectionProductArchivePage}-${selectedFinishTopSelectionProductArchivePage}`,
+      titleCartSidebar: "SAND DUNES",
+      type: "TEXTURED WALL DECOR",
+      optionsCartSidebar: `Size: ${selectedSizeTopSelectionProductArchivePage}, Finish: ${selectedFinishTopSelectionProductArchivePage}`,
+      priceCartSidebar: 28000, // String ki jagah Number likha hai jese humne pehle decide kiya tha
+      imageCartSidebar: imagesTopSelectionProductArchivePage[0],
+      quantityCartSidebar: quantityTopSelectionProductArchivePage,
+    };
+
+    addItemCartSidebar(product);
   };
 
   return (
@@ -155,16 +176,20 @@ function TopSelectionProductArchivePage() {
           </div>
 
           <div className="sectionTopSelectionProductArchivePage">
-            <span className="sectionTitleTopSelectionProductArchivePage">QUANTITY</span>
-            <div className="quantitySelectorTopSelectionProductArchivePage">
+            <span className="sectionTitleTopSelectionProductArchivePage" style={{marginBottom:'-20px', marginTop:'10px'}}>QUANTITY</span>
+            
+          </div>
+
+          <div className="actionRowTopSelectionProductArchivePage">
+           <div className="quantitySelectorTopSelectionProductArchivePage">
               <button className="qtyBtnTopSelectionProductArchivePage" onClick={decreaseQuantityTopSelectionProductArchivePage}>-</button>
               <span className="qtyValueTopSelectionProductArchivePage">{quantityTopSelectionProductArchivePage}</span>
               <button className="qtyBtnTopSelectionProductArchivePage" onClick={increaseQuantityTopSelectionProductArchivePage}>+</button>
             </div>
-          </div>
-
-          <div className="actionRowTopSelectionProductArchivePage">
-            <button className="addToCartBtnTopSelectionProductArchivePage">ADD TO COLLECTION</button>
+            <button className="addToCartBtnTopSelectionProductArchivePage" onClick={handleAddToCart}>
+              ADD TO Cart
+            </button>
+            
             <button className="wishlistBtnTopSelectionProductArchivePage">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
             </button>
