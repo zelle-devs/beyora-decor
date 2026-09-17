@@ -7,7 +7,7 @@ function page() {
   return (
     <div>
         <TopSectionCartPage/>
-        <YouMayAlsoLikeCartMain/>
+        {/* <YouMayAlsoLikeCartMain/> */}
         <LessDecorMorePresence/>
     </div>
   )

@@ -26,6 +26,7 @@
   color: var(--text-muted, #6b7280);
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-family: var(--font-montserrat);
   font-weight: 600;
 }
 
@@ -201,6 +202,9 @@
   }
   
   .cardGallaryGridHome {
-    height: 320px;
+    height: 220px;
+  }
+  .cardDescGallaryGridHome{
+    max-width: 165px;
   }
 }

@@ -423,11 +423,11 @@
 
 @media (max-width: 768px) {
   .sizeGridTopSelectionProductArchivePage {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
   }
   
   .finishGridTopSelectionProductArchivePage {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .trustBadgesTopSelectionProductArchivePage {

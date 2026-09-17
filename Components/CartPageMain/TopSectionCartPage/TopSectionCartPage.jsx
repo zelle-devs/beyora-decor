@@ -2,16 +2,22 @@
 import React from 'react';
 import './TopSectionCartPage.css';
 import { useCartCartSidebar } from '@/app/CartContext'; // Path theek kar lena
-
+import { useRouter } from 'next/navigation';
 function TopSectionCartPage() {
   
   const { 
     cartItemsCartSidebar, 
     increaseItemCartSidebar, 
     decreaseItemCartSidebar, 
-    removeItemCartSidebar 
+    removeItemCartSidebar ,
+    runWithCartLoaderCartSidebar
   } = useCartCartSidebar();
-
+  const router = useRouter();
+  const handleProceedToCheckoutTopSectionCartPage = () => {
+    runWithCartLoaderCartSidebar(() => {
+      router.push('/checkout');
+    });
+  };
   const totalItemsInCart = cartItemsCartSidebar.reduce((total, item) => total + item.quantityCartSidebar, 0);
   
   const subtotal = cartItemsCartSidebar.reduce(
@@ -131,11 +137,12 @@ function TopSectionCartPage() {
                 <span>Total</span>
                 <span className="totalPriceTopSectionCartPage">{formatPrice(total)}</span>
               </div>
-              <a href="/checkout">
-              <button  className="checkoutBtnTopSectionCartPage" disabled={cartItemsCartSidebar.length === 0}>
+              
+              <button  className="checkoutBtnTopSectionCartPage" disabled={cartItemsCartSidebar.length === 0}
+                onClick={handleProceedToCheckoutTopSectionCartPage}>
                 PROCEED TO CHECKOUT &rarr;
               </button>
-              </a>
+             
 
               <div className="paymentOptionsTopSectionCartPage">
                 <span className="paymentTextTopSectionCartPage">Or continue with</span>

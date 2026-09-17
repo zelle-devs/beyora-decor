@@ -264,10 +264,16 @@
 
 @media (max-width: 576px) {
   .gridProductsCategorySection {
-    grid-template-columns: 1fr;
+    grid-template-columns:  repeat(2, 1fr);
+    gap: 10px;
   }
   
   .promoTitleProductsCategorySection {
     font-size: 28px;
+  }
+  .promoFeaturesWrapperProductsCategorySection{
+    display: flex;
+    flex-direction: row;
+    gap: 0;
   }
 }

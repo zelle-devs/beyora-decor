@@ -14,7 +14,7 @@ function CraftDifferenceSections() {
       <div className="wrapperCraftDifferenceSections">
         
         <div className="leftSideCraftDifferenceSections">
-          <span className="subtitleCraftDifferenceSections">THE CRAFT</span>
+          <span className="subtitleHomeTagLineSection">THE CRAFT</span>
           <h2 className="titleCraftDifferenceSections">SEE THE<br />DIFFERENCE.</h2>
           <p className="descCraftDifferenceSections">
             It's the texture, the material and the detail<br />that give a piece its presence.

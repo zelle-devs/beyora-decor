@@ -7,19 +7,19 @@ function YouMayAlsoLikeCartMain() {
       id: 1,
       title: "Leather Wallet",
       price: "PKR 7,200",
-      img: "https://picsum.photos/400/250?random=1901"
+      img: "CartPageProduct1.jpg"
     },
     {
       id: 2,
       title: "Leather Desk Mat",
       price: "PKR 8,900",
-      img: "https://picsum.photos/400/250?random=1902"
+      img: "CartPageProduct2.jpg"
     },
     {
       id: 3,
       title: "Designer Wall Clock",
       price: "PKR 12,500",
-      img: "https://picsum.photos/400/250?random=1903"
+      img: "CartPageProduct3.jpg"
     },
     {
       id: 4,

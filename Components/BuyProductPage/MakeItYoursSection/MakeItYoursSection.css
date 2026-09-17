@@ -144,6 +144,17 @@
     text-align: center;
     gap: 10px;
   }
+  .centerColMakeItYoursSection{
+    flex: 2 !important;
+    display: flex;
+    justify-content: center;
+    width: 92%;
+    /* max-height: 400px; */
+  }
+
+  .imageMakeItYoursSection{
+    max-height: 600px;
+  }
   
   .rightColMakeItYoursSection {
     flex-direction: row;
@@ -156,12 +167,15 @@
   .rightColMakeItYoursSection {
     flex-direction: column;
     gap: 30px;
+    text-align: left;
+    width: 100%;
   }
   
   .featureItemMakeItYoursSection {
     flex-direction: row;
     align-items: flex-start;
     text-align: left;
+    width: 100%;
   }
 }
 
@@ -172,5 +186,9 @@
   
   .imageMakeItYoursSection {
     max-height: 250px;
+    min-width: 400px;
+  }
+  .centerColMakeItYoursSection{
+    flex: 2;
   }
 }

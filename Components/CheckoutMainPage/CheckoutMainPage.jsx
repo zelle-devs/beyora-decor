@@ -1,29 +1,85 @@
 "use client"
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import './CheckoutMainPage.css';
 import { useCartCartSidebar } from '@/app/CartContext'; // Path apne hisaab se theek kar lena
 
 function CheckoutMainPage() {
+  const router = useRouter();
   const [shippingMethodCheckoutMainPage, setShippingMethodCheckoutMainPage] = useState('standard');
   const [paymentMethodCheckoutMainPage, setPaymentMethodCheckoutMainPage] = useState('credit');
 
-  // 👇 Context se real cart data nikaal liya
+  // 👇 Form data store karne ke liye state
+  const [formData, setFormData] = useState({
+    email: '',
+    firstName: '',
+    lastName: '',
+    address: '',
+    apartment: '',
+    city: '',
+    province: 'Select Province',
+    postalCode: '',
+    phone: ''
+  });
+
   const { cartItemsCartSidebar } = useCartCartSidebar();
 
-  // 👇 Subtotal calculate karna
   const subtotal = cartItemsCartSidebar.reduce(
     (total, item) => total + (item.priceCartSidebar * item.quantityCartSidebar), 
     0
   );
 
-  // 👇 Shipping cost dynamically change hogi (Standard: 500, Express: 1000)
   const shippingCost = shippingMethodCheckoutMainPage === 'standard' ? 500 : 1000;
   
-  // 👇 Final total calculate karna
   const total = subtotal > 0 ? subtotal + shippingCost : 0;
 
-  // Price format karne ka helper function
   const formatPrice = (val) => `PKR ${val.toLocaleString()}`;
+
+  // 👇 Input fields ka data handle karne ka function
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // 👇 Order Place karne ka function
+  const handlePlaceOrder = () => {
+    const randomOrderNumber = `BEY-${Math.floor(10000 + Math.random() * 90000)}`;
+    const currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+    const orderData = {
+      orderNumber: randomOrderNumber,
+      placedOn: currentDate,
+      items: cartItemsCartSidebar.map((item) => ({
+        id: item.idCartSidebar,
+        name: item.titleCartSidebar,
+        variant: item.optionsCartSidebar || 'Standard',
+        qty: item.quantityCartSidebar,
+        price: item.priceCartSidebar,
+        image: item.imageCartSidebar
+      })),
+      shipping: shippingCost,
+      taxRate: 0,
+      shippingAddress: {
+        name: `${formData.firstName} ${formData.lastName}`,
+        lines: [
+          formData.address,
+          formData.apartment ? formData.apartment : '',
+          `${formData.city}, ${formData.province} ${formData.postalCode}`,
+          'Pakistan'
+        ].filter(Boolean)
+      },
+      payment: {
+        method: paymentMethodCheckoutMainPage === 'credit' ? 'Credit / Debit Card' :
+                paymentMethodCheckoutMainPage === 'apple' ? 'Apple Pay' :
+                paymentMethodCheckoutMainPage === 'google' ? 'Google Pay' : 'Cash on Delivery',
+        last4: paymentMethodCheckoutMainPage === 'credit' ? '****' : '' 
+      }
+    };
+
+    localStorage.setItem('beyvora_current_order', JSON.stringify(orderData));
+    
+    // 👇 Yahan apna Order Confirmation page ka exact route daalein
+    router.push('/order-confirmation'); 
+  };
 
   return (
     <>
@@ -59,7 +115,7 @@ function CheckoutMainPage() {
                 </div>
               </div>
               <div className="stepContentCheckoutMainPage">
-                <input type="email" placeholder="Email address" className="inputCheckoutMainPage fullWidthCheckoutMainPage" />
+                <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email address" className="inputCheckoutMainPage fullWidthCheckoutMainPage" />
                 <label className="checkboxLabelCheckoutMainPage">
                   <input type="checkbox" className="checkboxCheckoutMainPage" defaultChecked />
                   Email me with news and offers (optional)
@@ -76,23 +132,23 @@ function CheckoutMainPage() {
                 </div>
               </div>
               <div className="stepContentCheckoutMainPage gridLayoutCheckoutMainPage">
-                <input type="text" placeholder="First name" className="inputCheckoutMainPage halfWidthCheckoutMainPage" />
-                <input type="text" placeholder="Last name" className="inputCheckoutMainPage halfWidthCheckoutMainPage" />
-                <input type="text" placeholder="Address" className="inputCheckoutMainPage fullWidthCheckoutMainPage" />
-                <input type="text" placeholder="Apartment, suite, etc. (optional)" className="inputCheckoutMainPage fullWidthCheckoutMainPage" />
-                <input type="text" placeholder="City" className="inputCheckoutMainPage thirdWidthCheckoutMainPage" />
-                <select className="selectCheckoutMainPage thirdWidthCheckoutMainPage">
+                <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="First name" className="inputCheckoutMainPage halfWidthCheckoutMainPage" />
+                <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Last name" className="inputCheckoutMainPage halfWidthCheckoutMainPage" />
+                <input type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Address" className="inputCheckoutMainPage fullWidthCheckoutMainPage" />
+                <input type="text" name="apartment" value={formData.apartment} onChange={handleInputChange} placeholder="Apartment, suite, etc. (optional)" className="inputCheckoutMainPage fullWidthCheckoutMainPage" />
+                <input type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="City" className="inputCheckoutMainPage thirdWidthCheckoutMainPage" />
+                <select name="province" value={formData.province} onChange={handleInputChange} className="selectCheckoutMainPage thirdWidthCheckoutMainPage">
                   <option>Select Province</option>
                   <option>Sindh</option>
                   <option>Punjab</option>
                   <option>KPK</option>
                   <option>Balochistan</option>
                 </select>
-                <input type="text" placeholder="Postal code" className="inputCheckoutMainPage thirdWidthCheckoutMainPage" />
+                <input type="text" name="postalCode" value={formData.postalCode} onChange={handleInputChange} placeholder="Postal code" className="inputCheckoutMainPage thirdWidthCheckoutMainPage" />
                 <select className="selectCheckoutMainPage halfWidthCheckoutMainPage">
                   <option>Pakistan</option>
                 </select>
-                <input type="tel" placeholder="Phone number" className="inputCheckoutMainPage halfWidthCheckoutMainPage" />
+                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone number" className="inputCheckoutMainPage halfWidthCheckoutMainPage" />
               </div>
             </div>
 
@@ -237,7 +293,11 @@ function CheckoutMainPage() {
               </div>
             </div>
 
-            <button className="placeOrderBtnCheckoutMainPage" disabled={cartItemsCartSidebar.length === 0}>
+            <button 
+              className="placeOrderBtnCheckoutMainPage" 
+              onClick={handlePlaceOrder}
+              disabled={cartItemsCartSidebar.length === 0}
+            >
               PLACE ORDER &rarr;
             </button>
 
@@ -251,7 +311,6 @@ function CheckoutMainPage() {
             </div>
 
             <div className="summaryItemsCheckoutMainPage">
-              {/* 👇 Yahan Context data map ho raha hai */}
               {cartItemsCartSidebar.length === 0 ? (
                 <div style={{ padding: '20px 0', color: '#666' }}>Your cart is empty.</div>
               ) : (
@@ -283,12 +342,10 @@ function CheckoutMainPage() {
             <div className="summaryCalculationsCheckoutMainPage">
               <div className="calcRowCheckoutMainPage">
                 <span className="calcLabelCheckoutMainPage">Subtotal</span>
-                {/* 👇 Real Subtotal */}
                 <span className="calcValueCheckoutMainPage">{formatPrice(subtotal)}</span>
               </div>
               <div className="calcRowCheckoutMainPage">
                 <span className="calcLabelCheckoutMainPage">Shipping</span>
-                {/* 👇 Real Shipping Cost */}
                 <span className="calcValueCheckoutMainPage">{formatPrice(shippingCost)}</span>
               </div>
             </div>
@@ -296,7 +353,6 @@ function CheckoutMainPage() {
             <div className="totalRowCheckoutMainPage">
               <span className="totalLabelCheckoutMainPage">Total</span>
               <div className="totalRightCheckoutMainPage">
-                {/* 👇 Final Total (Subtotal + Shipping) */}
                 <span className="totalValueCheckoutMainPage">{formatPrice(total)}</span>
                 <span className="taxNoteCheckoutMainPage">(including applicable taxes)</span>
               </div>
@@ -332,7 +388,7 @@ function CheckoutMainPage() {
             </div>
 
             <div className="promoImageWrapperCheckoutMainPage">
-              <img src="https://picsum.photos/600/300?random=2104" alt="beyvora Box" className="promoImgCheckoutMainPage" />
+              <img src="/HomeGridGalleryNewLayout4.png" alt="beyvora Box" className="promoImgCheckoutMainPage" />
               <div className="promoCardCheckoutMainPage">
                 Good<br />Things<br />Carry<br />Meaning.
               </div>

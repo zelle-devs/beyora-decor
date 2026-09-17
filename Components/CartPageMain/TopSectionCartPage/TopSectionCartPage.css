@@ -3,7 +3,7 @@
   background-color: var(--background-color, #F5F2EC);
   padding: 40px 20px 80px 20px;
   box-sizing: border-box;
-  margin-top: 80px;
+  margin-top: 0px;
   font-family: 'Manrope', var(--font-poppins), sans-serif;
   color: var(--text-main, #2A2A2A);
 }
@@ -339,6 +339,7 @@
   width: 100%;
   background-color: var(--beyvora-black, #2A2A2A);
   color: #ffffff;
+  text-decoration: none;
   border: none;
   padding: 16px;
   font-size: 10px;
@@ -363,6 +364,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
   gap: 12px;
   margin-bottom: 30px;
 }
@@ -375,6 +377,7 @@
 .paymentButtonsTopSectionCartPage {
   display: flex;
   gap: 8px;
+  display: none;
   width: 100%;
 }
 

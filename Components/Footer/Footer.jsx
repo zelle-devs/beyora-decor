@@ -40,7 +40,7 @@ function Footer() {
                 {/* Column 1 */}
                 <div className="col1-BeyvoraFooterMain">
                     <div className="BevoraMainFooter-logo">
-                        <strong>Beyvora</strong> <span>Decor Store</span>
+                        <strong>Beyvora</strong> <span>Decor </span>
                     </div>
                     <p className="desc-BeyvoraFooterMain">
                         Join 10K+ design pros and access unique, high-quality pieces by original creators, 100% risk-free. Discover the Beyvora difference.
@@ -79,7 +79,7 @@ function Footer() {
                         <ul className="list-BeyvoraFooterMain">
                             <li><a href="/shop-all-products" className="link-BeyvoraFooterMain">Textured Wall Decor</a></li>
                             <li><a href="/shop-all-products" className="link-BeyvoraFooterMain">Metal Wall Decor</a></li>
-                            <li><a href="/shop-all-products" className="link-BeyvoraFooterMain">LEF Wall Decor</a></li>
+                            <li><a href="/shop-all-products" className="link-BeyvoraFooterMain">LED Wall Decor</a></li>
                             <li><a href="/shop-all-products" className="link-BeyvoraFooterMain">Islamic Calligraphy</a></li>
                             <li><a href="/shop-all-products" className="link-BeyvoraFooterMain">Metal Wall Clocks</a></li>
                             <li><a href="/shop-all-products" className="link-BeyvoraFooterMain">Neon Wall Decor</a></li>

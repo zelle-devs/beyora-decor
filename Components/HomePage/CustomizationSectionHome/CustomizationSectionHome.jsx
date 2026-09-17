@@ -16,7 +16,7 @@ function CustomizationSectionHome() {
         <div className="rightSideCustomizationSectionHome">
           
           <div className="textContentCustomizationSectionHome">
-            <span className="subtitleCustomizationSectionHome">CUSTOMIZATION</span>
+            <span className="subtitleHomeTagLineSection">CUSTOMIZATION</span>
             <h2 className="titleCustomizationSectionHome">YOUR WALL.<br />YOUR STATEMENT.</h2>
             <p className="descCustomizationSectionHome">
               Select pieces can be tailored to your space — from dimensions and finishes to calligraphy, colors and lighting — creating something truly personal.

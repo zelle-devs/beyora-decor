@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './TopSelectionProductArchivePage.css';
 import { useCartCartSidebar } from '@/app/CartContext'; // Path apne project ke hisaab se theek kar lijiye ga
-
+  
 function TopSelectionProductArchivePage() {
   const [activeImageIndexTopSelectionProductArchivePage, setActiveImageIndexTopSelectionProductArchivePage] = useState(0);
   const [selectedSizeTopSelectionProductArchivePage, setSelectedSizeTopSelectionProductArchivePage] = useState('Large');

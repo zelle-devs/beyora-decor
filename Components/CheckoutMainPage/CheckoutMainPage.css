@@ -9,7 +9,7 @@
 .containerCheckoutMainPage {
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 0px;
   display: flex;
   align-items: flex-start;
 }
@@ -27,6 +27,7 @@
   font-size: 11px;
   color: var(--text-muted, #7A8B6E);
   margin-bottom: 24px;
+  display: none;
 }
 
 .crumbCheckoutMainPage {
@@ -110,6 +111,7 @@
   position: absolute;
   right: 0;
   top: 4px;
+  display: none;
   font-size: 11px;
   color: var(--text-muted, #7A8B6E);
 }

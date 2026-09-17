@@ -35,8 +35,10 @@ function Header() {
 
     const closeDrawer = () => setIsDrawerOpen(false);
 
-    const handleNavClick = () => {
+   const handleNavClick = (e, href, label) => {
+        e.preventDefault();
         closeDrawer();
+        navigate(href, label);
     };
 
     const navLinks = [
@@ -86,7 +88,7 @@ function Header() {
                         </button>
 
                         <div className="BevoraMainHeader-logo" onClick={() => router.push('/')}>
-                            <strong>Beyvora</strong> <span>Decor Store</span>
+                            <strong>Beyvora</strong> <span>Decor</span>
                         </div>
 
                         <div className="BevoraMainHeader-actions">
@@ -156,7 +158,7 @@ function Header() {
                 <aside className={`BevoraMainHeader-drawer ${isDrawerOpen ? 'is-open' : ''}`}>
                     <div className="BevoraMainHeader-drawer-top">
                         <div className="BevoraMainHeader-drawer-logo" onClick={() => { router.push('/'); setIsDrawerOpen(false); }}>
-                            <strong>Beyvora</strong> <span>Decor Store</span>
+                            <strong>Beyvora</strong> <span>Decor</span>
                         </div>
                         <button
                             className="BevoraMainHeader-drawer-close"
@@ -182,13 +184,13 @@ function Header() {
                         </svg>
                     </div>
 
-                    <nav className="BevoraMainHeader-drawer-nav">
+                     <nav className="BevoraMainHeader-drawer-nav">
                         {navLinks.map((link, index) => (
                             <a
-                                key={link.href}
+                                key={link.href + index}
                                 href={link.href}
                                 className="BevoraMainHeader-drawer-nav-link"
-                                onClick={handleNavClick}
+                                onClick={(e) => handleNavClick(e, link.href, link.label)}
                                 style={{ transitionDelay: isDrawerOpen ? `${40 + index * 30}ms` : '0ms' }}
                             >
                                 {link.label}
