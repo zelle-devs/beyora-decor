@@ -32,7 +32,7 @@ export function CartProvider({ children }) {
     const openCartSidebar = () => setIsOpenCartSidebar(true);
     const closeCartSidebar = () => setIsOpenCartSidebar(false);
     // 👇 Yahan delay ko 5000ms (5 seconds) kar diya hai
-    const runWithCartLoaderCartSidebar = (action, delay = 5000) => {
+    const runWithCartLoaderCartSidebar = (action, delay = 3000) => {
         setIsCartLoadingCartSidebar(true);
         setTimeout(() => {
             action();

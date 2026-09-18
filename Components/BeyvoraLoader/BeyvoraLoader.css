@@ -31,8 +31,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: spinCircle 1s linear infinite;
-  animation-delay: 4s; /* 4s pe morph complete, yahan se ghumna shuru */
+   animation: spinCircle 1s linear infinite;
+  animation-delay: 2.8s;
 }
 
 @keyframes spinCircle {
@@ -51,7 +51,7 @@
   border-radius: 0;
   background: transparent;
   border: 2px solid transparent;
-  animation: morphShape 1s cubic-bezier(0.65, 0, 0.35, 1) 3s forwards;
+ animation: morphShape 0.6s cubic-bezier(0.65, 0, 0.35, 1) 2.2s forwards;
 }
 
 @keyframes morphShape {
@@ -93,7 +93,7 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  animation: fadeOutContent 0.5s ease-in-out 3s forwards; /* 3.0s pe text fade hona shuru */
+ animation: fadeOutContent 0.3s ease-in-out 2.2s forwards;
 }
 
 @keyframes fadeOutContent {
@@ -117,8 +117,8 @@
   opacity: 0;
   filter: blur(6px);
   transform: translateY(26px);
-  animation: beyvoraLetterIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: calc(var(--letter-index) * 60ms + 100ms); 
+  animation: beyvoraLetterIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--letter-index) * 40ms + 50ms);
 } 
 
 .beyvora-loader__letter--space {
@@ -161,8 +161,8 @@
     var(--beyvora-gold, #C8B093) 80%,
     transparent 100%
   );
-  animation: beyvoraDividerGrow 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-  animation-delay: 1.5s; /* Main text ke baad ye line draw hogi */
+ animation: beyvoraDividerGrow 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+   animation-delay: 0.9s;
 }
 
 @keyframes beyvoraDividerGrow {
@@ -187,8 +187,8 @@
   letter-spacing: 3.5px;
   opacity: 0;
   transform: translateY(10px);
-  animation: beyvoraSubletterIn 0.6s ease-out forwards;
-  animation-delay: calc(var(--letter-index) * 40ms + 2.2s); /* Sabse aakhir mein smoothly subtitle aayega */
+  animation: beyvoraSubletterIn 0.4s ease-out forwards;
+  animation-delay: calc(var(--letter-index) * 30ms + 1.5s);
 } 
 
 @keyframes beyvoraSubletterIn {

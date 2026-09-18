@@ -1,0 +1,914 @@
+ 
+
+.aboutUsPageContent {
+  background-color: var(--background-color);
+  color: var(--text-main);
+  font-family: var(--font-montserrat);
+  width: 100%;
+  height: 100%;
+}
+
+.aboutUsPageContent h1,
+.aboutUsPageContent h2,
+.aboutUsPageContent h3,
+.aboutUsPageContent h4 {
+  font-family: var(--font-playfair);
+}
+
+.aboutUsPageContent p,
+.aboutUsPageContent span,
+.aboutUsPageContent li,
+.aboutUsPageContent button {
+  font-family: var(--font-montserrat);
+}
+
+.sectionIconAboutUsPageContent {
+  color: var(--beyvora-gold);
+  margin-bottom: 10px;
+}
+
+/* ---------- Hijab showcase grid ---------- */
+.hijabShowcaseAboutUsPageContent {
+  padding: 70px 60px 40px;
+}
+
+.showcaseGridAboutUsPageContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 60px;
+  row-gap: 24px;
+}
+
+.showcaseImgWearAboutUsPageContent {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.showcaseTextExploreAboutUsPageContent {
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 10px;
+}
+
+.showcaseTextWearAboutUsPageContent {
+  grid-column: 1;
+  grid-row: 2;
+  padding-top: 18px;
+}
+
+.showcaseImgExploreAboutUsPageContent {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.showcaseImageAboutUsPageContent {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  max-height: 500px;
+  display: block;
+}
+
+.showcaseHeadingAboutUsPageContent {
+  font-size: var(--beyvora-font-headLG);
+  font-weight: 500;
+  margin: 0 0 14px 0;
+  color: var(--text-main);
+}
+
+.showcaseParaAboutUsPageContent {
+  font-size: var(--beyvora-font-paraSM);
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 420px;
+  margin: 0 0 26px 0;
+}
+
+.showcaseFeatureListAboutUsPageContent {
+  list-style: none;
+  margin: 0 0 30px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 16px;
+  column-gap: 20px;
+}
+
+.showcaseFeatureItemAboutUsPageContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.showcaseFeatureIconAboutUsPageContent {
+  color: var(--beyvora-brown);
+  min-width: 18px;
+}
+
+.showcaseFeatureTextAboutUsPageContent {
+  font-size: var(--beyvora-font-paraESM);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.showcaseBtnAboutUsPageContent {
+  background-color: var(--beyvora-black);
+  color: var(--beyvora-white);
+  border: none;
+  padding: 14px 32px;
+  font-size: var(--beyvora-font-paraSM);
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.showcaseBtnAboutUsPageContent:hover {
+  background-color: var(--beyvora-brown);
+}
+
+/* ---------- Exquisite Collections + stats ---------- */
+.collectionsStatsAboutUsPageContent {
+  background-color: var(--beyvora-beige);
+  padding: 46px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.collectionsTextAboutUsPageContent {
+  max-width: 340px;
+}
+
+.collectionsHeadingAboutUsPageContent {
+  font-size: var(--beyvora-font-headMD);
+  font-weight: 500;
+  margin: 0 0 10px 0;
+  color: var(--text-main);
+}
+
+.collectionsParaAboutUsPageContent {
+  font-size: var(--beyvora-font-paraESM);
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.statsRowAboutUsPageContent {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  flex-wrap: wrap;
+}
+
+.statItemAboutUsPageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.statNumberAboutUsPageContent {
+  font-family: var(--font-playfair) !important;
+  font-size: var(--beyvora-font-headLG);
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.statLabelAboutUsPageContent {
+  font-size: var(--beyvora-font-paraEVSM);
+  color: var(--text-muted);
+  margin-top: 6px;
+  white-space: nowrap;
+}
+
+/* ---------- Personalize It section ---------- */
+.personalizeSectionAboutUsPageContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  background-color: var(--beyvora-brown);
+}
+
+.personalizeTextAboutUsPageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 70px 60px;
+}
+
+.personalizeIntroAboutUsPageContent {
+  font-size: var(--beyvora-font-paraESM);
+  color: var(--background-color);
+  line-height: 1.8;
+  max-width: 320px;
+  margin: 0 0 22px 0;
+}
+
+.personalizeScriptWrapAboutUsPageContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.personalizeScriptAboutUsPageContent {
+  font-family:  var(--font-playfair), cursive;
+  font-size: 40px;
+  color: var(--background-color);
+}
+
+.personalizeHeartIconAboutUsPageContent {
+  color: var(--beyvora-gold);
+}
+
+.personalizeSubAboutUsPageContent {
+  font-size: var(--beyvora-font-paraEVSM);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--background-color);
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.personalizeParaAboutUsPageContent {
+  font-size: var(--beyvora-font-paraESM);
+  color: var(--background-color);
+  line-height: 1.8;
+  max-width: 340px;
+  margin: 0 0 28px 0;
+}
+
+.personalizeBtnAboutUsPageContent {
+  background-color: var(--beyvora-black);
+  color: var(--beyvora-white);
+  border: none;
+  padding: 14px 30px;
+  font-size: var(--beyvora-font-paraSM);
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.personalizeBtnAboutUsPageContent:hover {
+  background-color: var(--beyvora-brown);
+}
+
+.personalizeImageAboutUsPageContent {
+  height: 100%;
+  min-height: 420px;
+}
+
+/* ---------- Feature icons row ---------- */
+.featuresAboutUsPageContent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  padding: 60px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.featureItemAboutUsPageContent {
+  text-align: center;
+  padding: 0 12px;
+}
+
+.featureIconAboutUsPageContent {
+  color: var(--beyvora-brown);
+  margin-bottom: 14px;
+}
+
+.featureTitleAboutUsPageContent {
+  font-size: var(--beyvora-font-headESM);
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: var(--text-main);
+}
+
+.featureTextAboutUsPageContent {
+  font-size: var(--beyvora-font-paraESM);
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+} 
+/* =========================================================
+   TABLET LARGE — 1024px and below
+   ========================================================= */
+@media (max-width: 1024px) {
+
+  /* ---------- Hijab Showcase ---------- */
+  .hijabShowcaseAboutUsPageContent {
+    padding: 60px 40px 35px;
+  }
+
+  .showcaseGridAboutUsPageContent {
+    max-width: 900px;
+    column-gap: 40px;
+    row-gap: 22px;
+  }
+
+  .showcaseTextExploreAboutUsPageContent {
+    padding-top: 5px;
+  }
+
+  .showcaseTextWearAboutUsPageContent {
+    padding-top: 12px;
+  }
+
+  .showcaseHeadingAboutUsPageContent {
+    font-size: clamp(28px, 3.2vw, 38px);
+    margin-bottom: 12px;
+  }
+
+  .showcaseParaAboutUsPageContent {
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 380px;
+    margin-bottom: 22px;
+  }
+
+  .showcaseFeatureListAboutUsPageContent {
+    row-gap: 13px;
+    column-gap: 15px;
+    margin-bottom: 24px;
+  }
+
+  .showcaseFeatureItemAboutUsPageContent {
+    gap: 8px;
+  }
+
+  .showcaseFeatureTextAboutUsPageContent {
+    font-size: 13px;
+  }
+
+  .showcaseBtnAboutUsPageContent {
+    padding: 13px 26px;
+    font-size: 13px;
+  }
+
+
+  /* ---------- Collections + Stats ---------- */
+  .collectionsStatsAboutUsPageContent {
+    padding: 40px;
+    gap: 35px;
+            display: flex;
+        justify-content: center;
+        text-align: center;
+  }
+
+  .collectionsTextAboutUsPageContent {
+    max-width: 100%;
+  }
+
+  .collectionsHeadingAboutUsPageContent {
+    font-size: 25px;
+  }
+
+  .collectionsParaAboutUsPageContent {
+    font-size: 13px;
+  }
+
+  .statsRowAboutUsPageContent {
+    gap: 38px;
+  }
+
+  .statNumberAboutUsPageContent {
+    font-size: clamp(28px, 3.5vw, 36px);
+  }
+
+  .statLabelAboutUsPageContent {
+    font-size: 11px;
+  }
+
+
+  /* ---------- Personalize ---------- */
+  .personalizeTextAboutUsPageContent {
+    padding: 55px 40px;
+  }
+
+  .personalizeIntroAboutUsPageContent,
+  .personalizeParaAboutUsPageContent {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .personalizeScriptAboutUsPageContent {
+    font-size: 34px;
+  }
+
+  .personalizeSubAboutUsPageContent {
+    font-size: 10px;
+    letter-spacing: 1.7px;
+  }
+
+  .personalizeBtnAboutUsPageContent {
+    padding: 13px 26px;
+    font-size: 13px;
+  }
+
+  .personalizeImageAboutUsPageContent {
+    min-height: 380px;
+  }
+
+
+  /* ---------- Features ---------- */
+  .featuresAboutUsPageContent {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px 25px;
+    padding: 50px 40px;
+    max-width: 1000px;
+  }
+
+  .featureItemAboutUsPageContent {
+    padding: 0 8px;
+  }
+
+  .featureTitleAboutUsPageContent {
+    font-size: 16px;
+  }
+
+  .featureTextAboutUsPageContent {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   TABLET SMALL — 768px and below
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* ---------- Hijab Showcase ---------- */
+  .hijabShowcaseAboutUsPageContent {
+    padding: 45px 30px 30px;
+  }
+
+  .showcaseGridAboutUsPageContent {
+    max-width: 650px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    column-gap: 0;
+    row-gap: 28px;
+  }
+
+  .showcaseImgWearAboutUsPageContent,
+  .showcaseTextExploreAboutUsPageContent,
+  .showcaseTextWearAboutUsPageContent,
+  .showcaseImgExploreAboutUsPageContent {
+    grid-column: 1;
+    grid-row: auto;
+    padding-top: 0;
+  }
+
+  .showcaseTextExploreAboutUsPageContent,
+  .showcaseTextWearAboutUsPageContent {
+    padding: 0 5px;
+  }
+
+  .showcaseHeadingAboutUsPageContent {
+    font-size: clamp(27px, 5vw, 34px);
+    margin-bottom: 12px;
+  }
+
+  .showcaseParaAboutUsPageContent {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 22px;
+  }
+
+  .showcaseFeatureListAboutUsPageContent {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 14px;
+    column-gap: 20px;
+    margin-bottom: 25px;
+  }
+
+  .showcaseFeatureTextAboutUsPageContent {
+    font-size: 13px;
+  }
+
+  .showcaseBtnAboutUsPageContent {
+    padding: 13px 28px;
+  }
+
+  .showcaseImageAboutUsPageContent {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    max-height: 430px;
+    object-fit: cover;
+  }
+
+
+  /* ---------- Collections + Stats ---------- */
+  .collectionsStatsAboutUsPageContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 42px 30px;
+    gap: 30px;
+  }
+
+  .collectionsTextAboutUsPageContent {
+    max-width: 600px;
+  }
+
+  .collectionsHeadingAboutUsPageContent {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .collectionsParaAboutUsPageContent {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .statsRowAboutUsPageContent {
+    width: 100%;
+    justify-content: center;
+    gap: 35px 45px;
+  }
+
+  .statItemAboutUsPageContent {
+    min-width: 80px;
+  }
+
+  .statNumberAboutUsPageContent {
+    font-size: 32px;
+  }
+
+  .statLabelAboutUsPageContent {
+    font-size: 11px;
+  }
+
+
+  /* ---------- Personalize ---------- */
+  .personalizeSectionAboutUsPageContent {
+    grid-template-columns: 1fr;
+  }
+
+  .personalizeTextAboutUsPageContent {
+    padding: 55px 30px;
+  }
+
+  .personalizeIntroAboutUsPageContent,
+  .personalizeParaAboutUsPageContent {
+    max-width: 500px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .personalizeScriptAboutUsPageContent {
+    font-size: 36px;
+  }
+
+  .personalizeSubAboutUsPageContent {
+    font-size: 10px;
+  }
+
+  .personalizeImageAboutUsPageContent {
+    width: 100%;
+    min-height: 330px;
+    height: 330px;
+  }
+
+
+  /* ---------- Features ---------- */
+  .featuresAboutUsPageContent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 25px;
+    padding: 45px 30px;
+    max-width: 650px;
+  }
+
+  .featureItemAboutUsPageContent {
+    padding: 0 8px;
+  }
+
+  .featureIconAboutUsPageContent {
+    margin-bottom: 12px;
+  }
+
+  .featureTitleAboutUsPageContent {
+    font-size: 16px;
+  }
+
+  .featureTextAboutUsPageContent {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================================
+   MOBILE LARGE — 576px and below
+   ========================================================= */
+@media (max-width: 576px) {
+
+  /* ---------- Hijab Showcase ---------- */
+  .hijabShowcaseAboutUsPageContent {
+    padding: 35px 20px 25px;
+  }
+
+  .showcaseGridAboutUsPageContent {
+    max-width: 100%;
+    row-gap: 24px;
+  }
+
+  .showcaseTextExploreAboutUsPageContent,
+  .showcaseTextWearAboutUsPageContent {
+    padding: 0;
+  }
+
+  .showcaseHeadingAboutUsPageContent {
+    font-size: clamp(25px, 7vw, 31px);
+    line-height: 1.2;
+    margin-bottom: 11px;
+  }
+
+  .showcaseParaAboutUsPageContent {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .showcaseFeatureListAboutUsPageContent {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .showcaseFeatureItemAboutUsPageContent {
+    gap: 9px;
+  }
+
+  .showcaseFeatureIconAboutUsPageContent {
+    min-width: 17px;
+  }
+
+  .showcaseFeatureTextAboutUsPageContent {
+    font-size: 12.5px;
+  }
+
+  .showcaseBtnAboutUsPageContent {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 13px;
+  }
+
+  .showcaseImageAboutUsPageContent {
+    min-height: 240px;
+    max-height: 320px;
+  }
+
+
+  /* ---------- Collections + Stats ---------- */
+  .collectionsStatsAboutUsPageContent {
+    padding: 35px 20px;
+    gap: 25px;
+  }
+
+  .collectionsHeadingAboutUsPageContent {
+    font-size: 23px;
+  }
+
+  .collectionsParaAboutUsPageContent {
+    font-size: 12.5px;
+    line-height: 1.7;
+  }
+
+  .statsRowAboutUsPageContent {
+    width: 100%;
+    gap: 22px;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .statItemAboutUsPageContent {
+    min-width: 75px;
+  }
+
+  .statNumberAboutUsPageContent {
+    font-size: 20px;
+  }
+
+  .statLabelAboutUsPageContent {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+
+
+  /* ---------- Personalize ---------- */
+  .personalizeTextAboutUsPageContent {
+    padding: 45px 20px;
+  }
+
+  .personalizeIntroAboutUsPageContent {
+    max-width: 100%;
+    font-size: 12.5px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+  .personalizeScriptWrapAboutUsPageContent {
+    gap: 8px;
+  }
+
+  .personalizeScriptAboutUsPageContent {
+    font-size: 31px;
+  }
+
+  .personalizeSubAboutUsPageContent {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
+
+  .personalizeParaAboutUsPageContent {
+    max-width: 100%;
+    font-size: 12.5px;
+    line-height: 1.7;
+    margin-bottom: 23px;
+  }
+
+  .personalizeBtnAboutUsPageContent {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 13px;
+  }
+
+  .personalizeImageAboutUsPageContent {
+    min-height: 260px;
+    height: 260px;
+     max-height: 260px;
+  }
+
+
+  /* ---------- Features ---------- */
+  .featuresAboutUsPageContent {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 35px 20px;
+    max-width: 420px;
+  }
+
+  .featureItemAboutUsPageContent {
+    padding: 0 15px;
+  }
+
+  .featureIconAboutUsPageContent {
+    margin-bottom: 10px;
+  }
+
+  .featureTitleAboutUsPageContent {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .featureTextAboutUsPageContent {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================================
+   MOBILE SMALL — 400px and below
+   ========================================================= */
+@media (max-width: 400px) {
+
+  /* ---------- Hijab Showcase ---------- */
+  .hijabShowcaseAboutUsPageContent {
+    padding: 28px 16px 20px;
+  }
+
+  .showcaseGridAboutUsPageContent {
+    row-gap: 20px;
+  }
+
+  .showcaseHeadingAboutUsPageContent {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .showcaseParaAboutUsPageContent {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .showcaseFeatureListAboutUsPageContent {
+    row-gap: 10px;
+  }
+
+  .showcaseFeatureItemAboutUsPageContent {
+    gap: 7px;
+  }
+
+  .showcaseFeatureTextAboutUsPageContent {
+    font-size: 11.5px;
+  }
+
+  .showcaseBtnAboutUsPageContent {
+    padding: 13px 15px;
+    font-size: 12px;
+  }
+
+  .showcaseImageAboutUsPageContent {
+    min-height: 220px;
+    max-height: 270px;
+  }
+
+
+  /* ---------- Collections + Stats ---------- */
+  .collectionsStatsAboutUsPageContent {
+    padding: 30px 16px;
+    gap: 22px;
+  }
+
+  .collectionsHeadingAboutUsPageContent {
+    font-size: 21px;
+  }
+
+  .collectionsParaAboutUsPageContent {
+    font-size: 12px;
+  }
+
+  .statsRowAboutUsPageContent {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .statItemAboutUsPageContent {
+    min-width: 65px;
+  }
+
+  .statNumberAboutUsPageContent {
+    font-size: 20px;
+  }
+
+  .statLabelAboutUsPageContent {
+    font-size: 9px;
+    white-space: normal;
+  }
+
+
+  /* ---------- Personalize ---------- */
+  .personalizeTextAboutUsPageContent {
+    padding: 38px 16px;
+  }
+
+  .personalizeIntroAboutUsPageContent {
+    font-size: 12px;
+  }
+
+  .personalizeScriptAboutUsPageContent {
+    font-size: 28px;
+  }
+
+  .personalizeSubAboutUsPageContent {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .personalizeParaAboutUsPageContent {
+    font-size: 12px;
+  }
+
+  .personalizeBtnAboutUsPageContent {
+    padding: 13px 15px;
+    font-size: 12px;
+  }
+
+  .personalizeImageAboutUsPageContent {
+    min-height: 230px;
+    height: 230px;
+    max-height: 230px;
+  }
+
+
+  /* ---------- Features ---------- */
+  .featuresAboutUsPageContent {
+    gap: 26px;
+    padding: 30px 16px;
+  }
+
+  .featureItemAboutUsPageContent {
+    padding: 0 8px;
+  }
+
+  .featureTitleAboutUsPageContent {
+    font-size: 14px;
+  }
+
+  .featureTextAboutUsPageContent {
+    font-size: 11.5px;
+  }
+} 
