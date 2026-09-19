@@ -1,0 +1,91 @@
+.wrapper-ReturnsAndShippingBeyvora {
+  background-color: var(--background-color);
+  width: 100%;
+  padding: 60px 20px;
+}
+
+.container-ReturnsAndShippingBeyvora {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header-ReturnsAndShippingBeyvora {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--beyvora-beige);
+  padding-bottom: 30px;
+}
+
+.eyebrow-ReturnsAndShippingBeyvora {
+  font-size: var(--beyvora-font-paraSM);
+  color: var(--beyvora-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.title-ReturnsAndShippingBeyvora {
+  font-size: var(--beyvora-font-headLG);
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.updated-ReturnsAndShippingBeyvora {
+  font-size: var(--beyvora-font-paraSM);
+  color: var(--text-muted);
+}
+
+/* Sections */
+.section-ReturnsAndShippingBeyvora {
+  margin-bottom: 36px;
+}
+
+.heading-ReturnsAndShippingBeyvora {
+  font-size: var(--beyvora-font-headMD);
+  color: var(--text-main);
+  margin-bottom: 14px;
+  border-left: 3px solid var(--beyvora-brown);
+  padding-left: 12px;
+}
+
+.paragraph-ReturnsAndShippingBeyvora {
+  font-size: var(--beyvora-font-paraMD);
+  color: var(--text-main);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.list-ReturnsAndShippingBeyvora {
+  margin: 10px 0 10px 20px;
+  padding: 0;
+}
+
+.listItem-ReturnsAndShippingBeyvora {
+  font-size: var(--beyvora-font-paraMD);
+  color: var(--text-main);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.contactBox-ReturnsAndShippingBeyvora {
+  background-color: var(--beyvora-beige);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-top: 12px;
+}
+
+.contactItem-ReturnsAndShippingBeyvora {
+  font-size: var(--beyvora-font-paraMD);
+  color: var(--beyvora-black);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .title-ReturnsAndShippingBeyvora {
+    font-size: var(--beyvora-font-headMD);
+  }
+  .heading-ReturnsAndShippingBeyvora {
+    font-size: var(--beyvora-font-headSM);
+  }
+}

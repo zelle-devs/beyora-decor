@@ -100,9 +100,9 @@ function Footer() {
 
                 <div className="bottom-bar-BeyvoraFooterMain">
                     <div className="bottom-links-BeyvoraFooterMain">
-                        <a href="#returns" onClick={(e) => handleNavClick(e, '#returns', 'Returns & Refunds')} className="bottom-link-BeyvoraFooterMain">Returns & Refunds</a>
-                        <a href="#shipping" onClick={(e) => handleNavClick(e, '#shipping', 'Shipping Policy')} className="bottom-link-BeyvoraFooterMain">Shipping Policy</a>
-                        <a href="#faqs" onClick={(e) => handleNavClick(e, '#faqs', 'FAQs')} className="bottom-link-BeyvoraFooterMain">FAQs</a> 
+                        <a href="/privacy-policy" onClick={(e) => handleNavClick(e, '/privacy-policy', 'Privacy Policy')} className="bottom-link-BeyvoraFooterMain">Privacy Policy</a>
+                        <a href="/returns-and-shipping" onClick={(e) => handleNavClick(e, '/returns-and-shipping', 'Returns & Shipping')} className="bottom-link-BeyvoraFooterMain">Returns & Shipping</a>
+                        <a href="/terms-and-conditions" onClick={(e) => handleNavClick(e, '/terms-and-conditions', 'Terms & Conditions')} className="bottom-link-BeyvoraFooterMain">Terms & Conditions</a>
                     </div>
 
                     <div className="bottom-info-BeyvoraFooterMain">
