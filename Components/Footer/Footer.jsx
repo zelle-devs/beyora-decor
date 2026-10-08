@@ -53,7 +53,7 @@ function Footer() {
 
                 <div className="col1-BeyvoraFooterMain">
                     <div className="BevoraMainFooter-logo">
-                        <strong>Beyvora</strong> <span>Decor </span>
+                        <img src="/BeyvoraMainLogo.png" alt="" />
                     </div>
                     <p className="desc-BeyvoraFooterMain">
                         Join 10K+ design pros and access unique, high-quality pieces by original creators, 100% risk-free. Discover the Beyvora difference.

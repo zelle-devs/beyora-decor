@@ -23,7 +23,7 @@ function AboutUsPageContent() {
           {/* Top-left image */}
           <div className="showcaseImgWearAboutUsPageContent">
             <img
-              src="/abouruspagecontent1image.jpg"
+              src="/abouruspagecontent1image.png"
               alt="Beautiful textured wall art in a modern living space"
               className="showcaseImageAboutUsPageContent"
             />
@@ -104,7 +104,7 @@ function AboutUsPageContent() {
           {/* Bottom-right image */}
           <div className="showcaseImgExploreAboutUsPageContent">
             <img
-              src="/abouruspagecontent2image.jpg"
+              src="/abouruspagecontent2image.png"
               alt="Glowing LED wall art mounted above a sophisticated sofa"
               className="showcaseImageAboutUsPageContent"
             />
@@ -179,7 +179,7 @@ function AboutUsPageContent() {
 
         <div className="personalizeImageAboutUsPageContent">
           <img
-            src="/abouruspagecontent3image.jpg"
+            src="/abouruspagecontent3image.png"
             alt="Close up detail of a premium textured wall art piece"
             className="showcaseImageAboutUsPageContent"
           />

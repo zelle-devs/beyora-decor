@@ -88,7 +88,7 @@ function Header() {
                         </button>
 
                         <div className="BevoraMainHeader-logo" onClick={() => router.push('/')}>
-                            <strong>Beyvora</strong> <span>Decor</span>
+                            <img src='/BeyvoraMainLogo.png' alt="" />
                         </div>
 
                         <div className="BevoraMainHeader-actions">

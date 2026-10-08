@@ -1,16 +1,16 @@
 
 :root {
   /* Default Colors */
-  --background-color: #E8E4DC; /* Light off-white for a softer background */
-  --text-main: #1C1C1C;        /* Darkest shade for high contrast readability */
+  --background-color: #f3f1fc; /* Light off-white for a softer background */
+  --text-main: #243746;        /* Darkest shade for high contrast readability */
   --text-muted: #7A816A;       /* Olive tone for softer, secondary text */
 
-  --beyvora-black: #1C1C1C;
-  --beyvora-white: #E8E4DC;
-  --beyvora-brown: #A67C52;    /* Replaces blue as a strong primary tone */
+  --beyvora-black: #243746;
+  --beyvora-white: #f3f1fc;
+  --beyvora-brown: #a5aea0;    /* Replaces blue as a strong primary tone */
   --beyvora-beige: #D9C8B2;    /* Replaces gray for subtle backgrounds/borders */
   --beyvora-olive: #7A816A;    /* Additional accent color */
-  --beyvora-gold: #C2A56A;     /* Great for buttons, highlights, or call-to-actions */
+  --beyvora-gold: #a78968;     /* Great for buttons, highlights, or call-to-actions */
 
 
   /* Beyvora Font Sizes - Headings */

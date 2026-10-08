@@ -140,7 +140,7 @@ function ContactUsPageContent() {
       {/* App download banner */}
       <section className="appDownloadContactUsPageContent">
         <img
-          src="./aboutussecondbacgrounimage.jpg"
+          src="./aboutussecondbacgrounimage.png"
           alt="Luxury home interior"
           className="appDownloadImageContactUsPageContent"
         />

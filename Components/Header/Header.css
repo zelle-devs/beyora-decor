@@ -16,7 +16,7 @@
 
 /* Blur + transparency ONLY jab scroll ho (sticky activate) */
 .BevoraMainHeader-wrapper.is-scrolled {
-    background-color: #e8e4dcd5;
+    background-color: #f3f1fcc0;
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -88,6 +88,11 @@
     letter-spacing: -0.5px;
     line-height: 1;
     cursor: pointer;
+}
+
+.BevoraMainHeader-logo img{
+    width: 190px;
+    margin-bottom: -30px;
 }
 
 .BevoraMainHeader-logo strong {
