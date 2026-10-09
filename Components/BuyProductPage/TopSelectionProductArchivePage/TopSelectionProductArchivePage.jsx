@@ -1,24 +1,33 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
 import './TopSelectionProductArchivePage.css';
-import { useCartCartSidebar } from '@/app/CartContext'; // Path apne project ke hisaab se theek kar lijiye ga
-  
+import { useCartCartSidebar } from '@/app/CartContext';
+import { productsData } from '@/app/productsData';
+
 function TopSelectionProductArchivePage() {
+  const params = useParams();
+  const productId = params?.id;
+
+  // Find the product that was clicked
+  const product = productsData.find((p) => String(p.id) === String(productId)) || null;
+
   const [activeImageIndexTopSelectionProductArchivePage, setActiveImageIndexTopSelectionProductArchivePage] = useState(0);
   const [selectedSizeTopSelectionProductArchivePage, setSelectedSizeTopSelectionProductArchivePage] = useState('Large');
   const [selectedFinishTopSelectionProductArchivePage, setSelectedFinishTopSelectionProductArchivePage] = useState('Natural');
   const [quantityTopSelectionProductArchivePage, setQuantityTopSelectionProductArchivePage] = useState(1);
 
-  // 👇 Context se addItem function nikaal liya
   const { addItemCartSidebar } = useCartCartSidebar();
 
-  const imagesTopSelectionProductArchivePage = [
-    "/HomeGridGalleryNewLayout1.png",
-    "/HomeGridGalleryNewLayout2.png",
-    "/HomeGridGalleryNewLayout3.png",
-    "/HomeGridGalleryNewLayout4.png",
-    "/HomeGridGalleryNewLayout5.png",
-  ];
+  // Reset selections whenever a different product is opened
+  useEffect(() => {
+    setActiveImageIndexTopSelectionProductArchivePage(0);
+    setSelectedSizeTopSelectionProductArchivePage('Large');
+    setSelectedFinishTopSelectionProductArchivePage('Natural');
+    setQuantityTopSelectionProductArchivePage(1);
+  }, [productId]);
+
+  const imagesTopSelectionProductArchivePage = product ? product.images : [];
 
   const sizesTopSelectionProductArchivePage = [
     { name: 'Medium', dims: '90 x 60 cm' },
@@ -34,13 +43,13 @@ function TopSelectionProductArchivePage() {
   ];
 
   const handlePrevImageTopSelectionProductArchivePage = () => {
-    setActiveImageIndexTopSelectionProductArchivePage((prev) => 
+    setActiveImageIndexTopSelectionProductArchivePage((prev) =>
       prev === 0 ? imagesTopSelectionProductArchivePage.length - 1 : prev - 1
     );
   };
 
   const handleNextImageTopSelectionProductArchivePage = () => {
-    setActiveImageIndexTopSelectionProductArchivePage((prev) => 
+    setActiveImageIndexTopSelectionProductArchivePage((prev) =>
       prev === imagesTopSelectionProductArchivePage.length - 1 ? 0 : prev + 1
     );
   };
@@ -55,35 +64,44 @@ function TopSelectionProductArchivePage() {
     setQuantityTopSelectionProductArchivePage(quantityTopSelectionProductArchivePage + 1);
   };
 
-  // 👇 Add to Cart ka function jo data ko format karke Context mein bhejega
   const handleAddToCart = () => {
-    const product = {
-      // ID unique banani zaroori hai, isliye Size aur Finish ko add kar diya
-      // Taake agar user same product alag size mein le toh wo alag item consider ho
-      idCartSidebar: `sand-dunes-${selectedSizeTopSelectionProductArchivePage}-${selectedFinishTopSelectionProductArchivePage}`,
-      titleCartSidebar: "SAND DUNES",
-      type: "TEXTURED WALL DECOR",
+    if (!product) return;
+
+    const cartProduct = {
+      // Unique per product + size + finish
+      idCartSidebar: `product-${product.id}-${selectedSizeTopSelectionProductArchivePage}-${selectedFinishTopSelectionProductArchivePage}`,
+      titleCartSidebar: product.title,
+      type: product.type,
       optionsCartSidebar: `Size: ${selectedSizeTopSelectionProductArchivePage}, Finish: ${selectedFinishTopSelectionProductArchivePage}`,
-      priceCartSidebar: 28000, // String ki jagah Number likha hai jese humne pehle decide kiya tha
-      imageCartSidebar: imagesTopSelectionProductArchivePage[0],
+      priceCartSidebar: product.price,
+      imageCartSidebar: product.img,
       quantityCartSidebar: quantityTopSelectionProductArchivePage,
     };
 
-    addItemCartSidebar(product);
+    addItemCartSidebar(cartProduct);
   };
+
+  // IMPORTANT: this early return must stay AFTER all hooks
+  if (!product) {
+    return (
+      <div style={{ padding: '100px 20px', textAlign: 'center', fontSize: '20px' }}>
+        Product not found.
+      </div>
+    );
+  }
 
   return (
     <div className="containerTopSelectionProductArchivePage">
       <div className="wrapperTopSelectionProductArchivePage">
-        
+
         <div className="leftColTopSelectionProductArchivePage">
           <div className="mainImageWrapperTopSelectionProductArchivePage">
-            <img 
-              src={imagesTopSelectionProductArchivePage[activeImageIndexTopSelectionProductArchivePage]} 
-              alt="Sand Dunes Textured Wall Decor" 
-              className="mainImgTopSelectionProductArchivePage" 
+            <img
+              src={imagesTopSelectionProductArchivePage[activeImageIndexTopSelectionProductArchivePage]}
+              alt={`${product.title} ${product.type}`}
+              className="mainImgTopSelectionProductArchivePage"
             />
-            
+
             <button className="navArrowTopSelectionProductArchivePage leftArrowTopSelectionProductArchivePage" onClick={handlePrevImageTopSelectionProductArchivePage}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
@@ -98,8 +116,8 @@ function TopSelectionProductArchivePage() {
 
           <div className="thumbnailsListTopSelectionProductArchivePage">
             {imagesTopSelectionProductArchivePage.map((img, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`thumbItemTopSelectionProductArchivePage ${activeImageIndexTopSelectionProductArchivePage === index ? 'activeThumbTopSelectionProductArchivePage' : ''}`}
                 onClick={() => setActiveImageIndexTopSelectionProductArchivePage(index)}
               >
@@ -116,23 +134,21 @@ function TopSelectionProductArchivePage() {
 
         <div className="rightColTopSelectionProductArchivePage">
           <div className="productHeaderTopSelectionProductArchivePage">
-            <span className="categoryTopSelectionProductArchivePage">TEXTURED WALL DECOR</span>
-            <h1 className="titleTopSelectionProductArchivePage">SAND DUNES</h1>
-            <h3 className="subtitleTopSelectionProductArchivePage">Tactile. Layered. Distinct.</h3>
-            <p className="descTopSelectionProductArchivePage">
-              A sculptural wall piece with layered textures and subtle metallic accents, designed to bring depth and character into contemporary interiors.
-            </p>
+            <span className="categoryTopSelectionProductArchivePage">{product.type}</span>
+            <h1 className="titleTopSelectionProductArchivePage">{product.title}</h1>
+            <h3 className="subtitleTopSelectionProductArchivePage">{product.subtitle}</h3>
+            <p className="descTopSelectionProductArchivePage">{product.description}</p>
           </div>
 
           <div className="priceReviewRowTopSelectionProductArchivePage">
-            <span className="priceTopSelectionProductArchivePage">PKR 28,000</span>
+            <span className="priceTopSelectionProductArchivePage">PKR {product.price.toLocaleString('en-US')}</span>
             <div className="reviewsTopSelectionProductArchivePage">
               <div className="starsTopSelectionProductArchivePage">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <svg key={star} width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                 ))}
               </div>
-              <span className="reviewCountTopSelectionProductArchivePage">(12 reviews)</span>
+              <span className="reviewCountTopSelectionProductArchivePage">({product.reviews} reviews)</span>
             </div>
           </div>
 
@@ -142,8 +158,8 @@ function TopSelectionProductArchivePage() {
             <span className="sectionTitleTopSelectionProductArchivePage">SIZE</span>
             <div className="sizeGridTopSelectionProductArchivePage">
               {sizesTopSelectionProductArchivePage.map((size) => (
-                <div 
-                  key={size.name} 
+                <div
+                  key={size.name}
                   className={`sizeBoxTopSelectionProductArchivePage ${selectedSizeTopSelectionProductArchivePage === size.name ? 'activeSizeTopSelectionProductArchivePage' : ''}`}
                   onClick={() => setSelectedSizeTopSelectionProductArchivePage(size.name)}
                 >
@@ -158,8 +174,8 @@ function TopSelectionProductArchivePage() {
             <span className="sectionTitleTopSelectionProductArchivePage">FINISH</span>
             <div className="finishGridTopSelectionProductArchivePage">
               {finishesTopSelectionProductArchivePage.map((finish) => (
-                <div 
-                  key={finish.name} 
+                <div
+                  key={finish.name}
                   className="finishItemTopSelectionProductArchivePage"
                   onClick={() => setSelectedFinishTopSelectionProductArchivePage(finish.name)}
                 >
@@ -176,12 +192,11 @@ function TopSelectionProductArchivePage() {
           </div>
 
           <div className="sectionTopSelectionProductArchivePage">
-            <span className="sectionTitleTopSelectionProductArchivePage" style={{marginBottom:'-20px', marginTop:'10px'}}>QUANTITY</span>
-            
+            <span className="sectionTitleTopSelectionProductArchivePage" style={{ marginBottom: '-20px', marginTop: '10px' }}>QUANTITY</span>
           </div>
 
           <div className="actionRowTopSelectionProductArchivePage">
-           <div className="quantitySelectorTopSelectionProductArchivePage">
+            <div className="quantitySelectorTopSelectionProductArchivePage">
               <button className="qtyBtnTopSelectionProductArchivePage" onClick={decreaseQuantityTopSelectionProductArchivePage}>-</button>
               <span className="qtyValueTopSelectionProductArchivePage">{quantityTopSelectionProductArchivePage}</span>
               <button className="qtyBtnTopSelectionProductArchivePage" onClick={increaseQuantityTopSelectionProductArchivePage}>+</button>
@@ -189,7 +204,7 @@ function TopSelectionProductArchivePage() {
             <button className="addToCartBtnTopSelectionProductArchivePage" onClick={handleAddToCart}>
               ADD TO Cart
             </button>
-            
+
             <button className="wishlistBtnTopSelectionProductArchivePage">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
             </button>

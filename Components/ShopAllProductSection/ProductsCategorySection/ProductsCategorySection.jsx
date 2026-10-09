@@ -1,60 +1,35 @@
 "use client"
 
-
 import React from 'react';
 import './ProductsCategorySection.css';
 import { MoveRight } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-function ProductsCategorySection() {
-     const router = useRouter();
-  const productsProductsCategorySection = [
-    {
-      id: 1,
-      title: "SAND DUNES",
-      price: "PKR 28,000",
-      img: "/HomeGridGalleryNewLayout4.png"
-    },
-    {
-      id: 2,
-      title: "GOLDEN FLOW",
-      price: "PKR 32,000",
-      img: "/HomeGridGalleryNewLayout5.png"
-    },
-    {
-      id: 3,
-      title: "EARTHEN LAYERS",
-      price: "PKR 26,000",
-      img: "/HomeGridGalleryNewLayout6.png"
-    },
-    {
-      id: 4,
-      title: "THE ARCH",
-      price: "PKR 24,000",
-      img: "/HomeGridGalleryNewLayout7.png"
-    },
-    {
-      id: 5,
-      title: "NATURAL FORM",
-      price: "PKR 30,000",
-      img: "/HomeGridGalleryNewLayout8.png"
-    },
-    {
-      id: 6,
-      title: "QUIET HARMONY",
-      price: "PKR 27,000",
-      img: "/HomeGridGalleryNewLayout9.png"
-    }
-  ];
+import { useRouter, useParams } from 'next/navigation';
+import { productsData } from '@/app/productsData';
 
+function ProductsCategorySection() {
+  const router = useRouter();
+  const params = useParams();
+  const categorySlug = params?.category;
+  const visibleProducts = categorySlug
+    ? productsData.filter((p) => p.category === categorySlug)
+    : productsData;
   return (
     <div className="containerProductsCategorySection">
       
-      <div className="gridProductsCategorySection">
-        {productsProductsCategorySection.map((item) => (
-          <div key={item.id} className="cardProductsCategorySection"  onClick={() => router.push('/buy-product')}>
+            <div className="gridProductsCategorySection">
+         {visibleProducts.length === 0 && <p>No products found.</p>}
+        {visibleProducts.map((item) => (
+          <div
+            key={item.id}
+            className="cardProductsCategorySection"
+            onClick={() => router.push(`/buy-product/${item.id}`)}
+          >
             <div className="imageWrapperProductsCategorySection">
               <img src={item.img} alt={item.title} className="imageProductsCategorySection" />
-              <button className="heartBtnProductsCategorySection">
+              <button
+                className="heartBtnProductsCategorySection"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                 </svg>
@@ -63,7 +38,7 @@ function ProductsCategorySection() {
             <div className="cardDetailsProductsCategorySection">
               <div className="textLeftProductsCategorySection">
                 <h3 className="cardTitleProductsCategorySection">{item.title}</h3>
-                <p className="cardPriceProductsCategorySection">{item.price}</p>
+                <p className="cardPriceProductsCategorySection">PKR {item.price.toLocaleString('en-US')}</p>
               </div>
               <div className="iconRightProductsCategorySection">
                 <span className="arrowProductsCategorySection">&rarr;</span>
