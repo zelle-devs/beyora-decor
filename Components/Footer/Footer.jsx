@@ -87,13 +87,13 @@ function Footer() {
                         <span className="accordion-icon"></span>
                     </h3>
                     <div className={`accordion-content ${openSection === 'creators' ? 'open' : ''}`}>
-                        <ul className="list-BeyvoraFooterMain">
-                            <li><a href="/shop-all-products" onClick={(e) => handleNavClick(e, '/shop-all-products', 'Textured Wall Decor')} className="link-BeyvoraFooterMain">Textured Wall Decor</a></li>
-                            <li><a href="/shop-all-products" onClick={(e) => handleNavClick(e, '/shop-all-products', 'Metal Wall Decor')} className="link-BeyvoraFooterMain">Metal Wall Decor</a></li>
-                            <li><a href="/shop-all-products" onClick={(e) => handleNavClick(e, '/shop-all-products', 'LED Wall Decor')} className="link-BeyvoraFooterMain">LED Wall Decor</a></li>
-                            <li><a href="/shop-all-products" onClick={(e) => handleNavClick(e, '/shop-all-products', 'Islamic Calligraphy')} className="link-BeyvoraFooterMain">Islamic Calligraphy</a></li>
-                            <li><a href="/shop-all-products" onClick={(e) => handleNavClick(e, '/shop-all-products', 'Metal Wall Clocks')} className="link-BeyvoraFooterMain">Metal Wall Clocks</a></li>
-                            <li><a href="/shop-all-products" onClick={(e) => handleNavClick(e, '/shop-all-products', 'Neon Wall Decor')} className="link-BeyvoraFooterMain">Neon Wall Decor</a></li>
+                       <ul className="list-BeyvoraFooterMain">
+                            <li><a href="/category/premium-wall-decor" onClick={(e) => handleNavClick(e, '/category/premium-wall-decor', 'Premium Wall Decor')} className="link-BeyvoraFooterMain">Premium Wall Decor</a></li>
+                            <li><a href="/category/metal-wall-decor" onClick={(e) => handleNavClick(e, '/category/metal-wall-decor', 'Metal Wall Decor')} className="link-BeyvoraFooterMain">Metal Wall Decor</a></li>
+                            <li><a href="/category/led-wall-decor" onClick={(e) => handleNavClick(e, '/category/led-wall-decor', 'LED Wall Decor')} className="link-BeyvoraFooterMain">LED Wall Decor</a></li>
+                            <li><a href="/category/islamic-calligraphy" onClick={(e) => handleNavClick(e, '/category/islamic-calligraphy', 'Islamic Calligraphy')} className="link-BeyvoraFooterMain">Islamic Calligraphy</a></li>
+                            <li><a href="/category/metal-wall-clocks" onClick={(e) => handleNavClick(e, '/category/metal-wall-clocks', 'Metal Wall Clocks')} className="link-BeyvoraFooterMain">Metal Wall Clocks</a></li>
+                            <li><a href="/category/neon-wall-decor" onClick={(e) => handleNavClick(e, '/category/neon-wall-decor', 'Neon Wall Decor')} className="link-BeyvoraFooterMain">Neon Wall Decor</a></li>
                         </ul>
                     </div>
                 </div>

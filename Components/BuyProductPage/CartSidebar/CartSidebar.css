@@ -44,7 +44,7 @@
     padding: 22px 24px;
     border-bottom: 1px solid #2A2A2A;
     flex-shrink: 0;
-    background-color: #F5F2EC;
+    background-color: #f3f1fc;
 }
 
 .cartHeaderTitleGroupCartSidebar {
@@ -89,7 +89,7 @@
     flex: 1 1 auto;
     overflow-y: auto;
     padding: 8px 24px;
-    background-color: #F5F2EC;
+    background-color: #f3f1fc;
 }
 
 .cartEmptyStateCartSidebar {
@@ -264,7 +264,7 @@
     flex-shrink: 0;
     padding: 20px 24px 26px;
     border-top: 1px solid #2A2A2A;
-    background-color: #F5F2EC;
+    background-color: #f3f1fc;
 }
 
 .cartSubtotalRowCartSidebar {
@@ -294,7 +294,7 @@
 .cartCheckoutBtnCartSidebar {
     width: 100%;
     padding: 14px 0;
-    background-color: #2A2A2A;
+    background-color: var(--beyvora-black);
     color: #F5F2EC;
     border: none;
     border-radius: 8px;
@@ -303,11 +303,14 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     cursor: pointer;
+    border: 1px solid var(--beyvora-black);
     transition: background-color 0.25s ease, transform 0.15s ease;
 }
 
 .cartCheckoutBtnCartSidebar:hover {
-    background-color: #414141;
+    background-color: transparent;
+    color: var(--beyvora-black);
+    border: 1px solid var(--beyvora-black);
 }
 
 .cartCheckoutBtnCartSidebar:active {
@@ -319,8 +322,8 @@
     padding: 12px 0;
     margin-top: 10px;
     background-color: transparent;
-    color: #2A2A2A;
-    border: 1px solid #2A2A2A;
+    color: var(--beyvora-black);
+    border: 1px solid var(--beyvora-black);
     border-radius: 8px;
     font-family: var(--font-montserrat);
     font-size: var(--Imprint-font-paraSM);
@@ -330,8 +333,8 @@
 }
 
 .cartContinueBtnCartSidebar:hover {
-    background-color: #414141;
-    color: #F5F2EC;
+    background-color: var(--beyvora-black);
+    color: var(--beyvora-white);
 }
 
 /* ===== Scrollbar ===== */

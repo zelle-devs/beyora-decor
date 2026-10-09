@@ -83,7 +83,7 @@
   height: 220px;
   overflow: hidden;
   display: flex;
-  background-color: #503c30db; 
+  background-color: #243746e0; 
   cursor: pointer;
 }
 
@@ -107,7 +107,7 @@
   z-index: 2;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #412100 0%, #4f2902e6 35%, #b4723000 80%);
+  background: linear-gradient(90deg, #243746 0%, #243746cf 25%, #2437463a 80%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

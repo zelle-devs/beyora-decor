@@ -41,13 +41,13 @@ function Header() {
         navigate(href, label);
     };
 
-    const navLinks = [
-        { href: '/shop-all-products', label: 'Textured Wall Decor' },
-        { href: '/shop-all-products', label: 'LED Wall Decor' },
-        { href: '/shop-all-products', label: 'Islamic Calligraphy' },
-        { href: '/shop-all-products', label: 'Metal Wall Decor' },
-        { href: '/shop-all-products', label: 'Metal Wall Clocks' },
-        { href: '/shop-all-products', label: 'Neon Wall Decor' },
+     const navLinks = [
+        { href: '/category/premium-wall-decor', label: 'Premium Wall Decor' },
+        { href: '/category/led-wall-decor', label: 'LED Wall Decor' },
+        { href: '/category/islamic-calligraphy', label: 'Islamic Calligraphy' },
+        { href: '/category/metal-wall-decor', label: 'Metal Wall Decor' },
+        { href: '/category/metal-wall-clocks', label: 'Metal Wall Clocks' },
+        { href: '/category/neon-wall-decor', label: 'Neon Wall Decor' },
     ];
 
     // Badge ki total quantity calculation
@@ -88,7 +88,7 @@ function Header() {
                         </button>
 
                         <div className="BevoraMainHeader-logo" onClick={() => router.push('/')}>
-                            <img src='/BeyvoraMainLogo.png' alt="" />
+                            <img src='/BeyvoraMainLogo1Long.png' alt="" />
                         </div>
 
                         <div className="BevoraMainHeader-actions">

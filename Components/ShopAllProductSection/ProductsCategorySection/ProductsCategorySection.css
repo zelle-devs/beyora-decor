@@ -182,7 +182,7 @@
 .promoBtnProductsCategorySection {
   margin-top: 8px;
   background-color: transparent;
-  color: var(--text-main, #1C1C1C);
+  color: var(--beyvora-black, #1C1C1C);
   border: 1px solid var(--text-muted, #7A816A);
   padding: 10px 20px;
   font-size: 10px;
@@ -198,8 +198,8 @@
 }
 
 .promoBtnProductsCategorySection:hover {
-  background-color: var(--beyvora-gold, #1C1C1C);
-  color: var(--beyvora-black);
+  background-color: var(--beyvora-black, #1C1C1C);
+  color: var(--beyvora-white);
   border-color: var(--beyvora-gold, #1C1C1C);
 }
 
