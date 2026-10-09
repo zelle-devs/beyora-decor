@@ -132,7 +132,7 @@ function ReadyToShopCarousal() {
           <p className="subTitleReadyToShopCarousal">READY TO SHOP </p>
           <h2 className="mainTitleReadyToShopCarousal">In Stock Lighting</h2>
         </div>
-        <a href="/shop-all-products" className="moreLinkReadyToShopCarousal">More in Lighting</a>
+        <a href="/category/premium-wall-decor" className="moreLinkReadyToShopCarousal">More in Lighting</a>
       </div>
 
       <div className="carouselWrapperReadyToShopCarousal">

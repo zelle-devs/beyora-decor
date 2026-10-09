@@ -56,7 +56,7 @@ function GallaryGridHome() {
           <h2 className="titleGallaryGridHome">EXPLORE THE COLLECTION</h2>
         </div>
         <div className="headerRightGallaryGridHome">
-          <a href="/collections" className="viewAllLinkGallaryGridHome">
+          <a href="/category/premium-wall-decor" className="viewAllLinkGallaryGridHome">
             VIEW ALL COLLECTIONS <span className="arrowGallaryGridHome">&rarr;</span>
           </a>
         </div>

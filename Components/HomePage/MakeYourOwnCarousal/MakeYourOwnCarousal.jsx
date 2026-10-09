@@ -132,7 +132,7 @@ const dataMakeYourOwnCarousal = [
           <p className="subTitleMakeYourOwnCarousal">MAKE IT YOUR OWN</p>
           <h2 className="mainTitleMakeYourOwnCarousal">Customizable Furniture</h2>
         </div>
-        <a href="/shop-all-products" className="moreLinkMakeYourOwnCarousal">More in Furniture</a>
+        <a href="/category/premium-wall-decor" className="moreLinkMakeYourOwnCarousal">More in Furniture</a>
       </div>
 
       <div className="carouselWrapperMakeYourOwnCarousal">
