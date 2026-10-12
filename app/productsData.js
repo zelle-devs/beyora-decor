@@ -77,12 +77,14 @@ export const categoriesData = [
     description:
       "Strong, finely finished metal wall pieces designed to make a lasting statement in any space.",
     products: [
-      { title: "METAL WALL DECOR 1", price: 22000 },
-      { title: "METAL WALL DECOR 2", price: 26500 },
-      { title: "METAL WALL DECOR 3", price: 19000 },
-      { title: "METAL WALL DECOR 4", price: 31000 },
-      { title: "METAL WALL DECOR 5", price: 24000 },
-      { title: "METAL WALL DECOR 6", price: 28500 },
+      { title: "METAL WALL DECOR 1", price: 22000, img: "/products/metal-wall-decor/MetalWallDecor1.jpeg"  },
+      { title: "METAL WALL DECOR 2", price: 26500, img: "/products/metal-wall-decor/MetalWallDecor2.jpeg"  },
+      { title: "METAL WALL DECOR 3", price: 19000, img: "/products/metal-wall-decor/MetalWallDecor3.jpeg"  },
+      { title: "METAL WALL DECOR 4", price: 31000, img: "/products/metal-wall-decor/MetalWallDecor4.jpeg"  },
+      { title: "METAL WALL DECOR 5", price: 24000, img: "/products/metal-wall-decor/MetalWallDecor5.jpeg"  },
+      { title: "METAL WALL DECOR 6", price: 28500, img: "/products/metal-wall-decor/MetalWallDecor6.jpeg"  },
+      { title: "METAL WALL DECOR 7", price: 18500, img: "/products/metal-wall-decor/MetalWallDecor7.jpeg"  },
+      { title: "METAL WALL DECOR 8", price: 21500, img: "/products/metal-wall-decor/MetalWallDecor8.jpeg"  },
     ],
   },
   {
@@ -92,12 +94,16 @@ export const categoriesData = [
     description:
       "Statement metal wall clocks that keep perfect time while adding style and character to your wall.",
     products: [
-      { title: "METAL WALL CLOCK 1", price: 8500 },
-      { title: "METAL WALL CLOCK 2", price: 11000 },
-      { title: "METAL WALL CLOCK 3", price: 9500 },
-      { title: "METAL WALL CLOCK 4", price: 13500 },
-      { title: "METAL WALL CLOCK 5", price: 7800 },
-      { title: "METAL WALL CLOCK 6", price: 15000 },
+      { title: "METAL WALL CLOCK 1", price: 8500, img: "/products/metal-wall-clocks/MetalWallClock1.jpeg"  },
+      { title: "METAL WALL CLOCK 2", price: 11000, img: "/products/metal-wall-clocks/MetalWallClock2.jpeg" },
+      { title: "METAL WALL CLOCK 3", price: 9500, img: "/products/metal-wall-clocks/MetalWallClock3.jpeg" },
+      { title: "METAL WALL CLOCK 4", price: 13500, img: "/products/metal-wall-clocks/MetalWallClock4.jpeg" },
+      { title: "METAL WALL CLOCK 5", price: 7800, img: "/products/metal-wall-clocks/MetalWallClock5.jpeg" },
+      { title: "METAL WALL CLOCK 6", price: 15000, img: "/products/metal-wall-clocks/MetalWallClock6.jpeg" },
+      { title: "METAL WALL CLOCK 7", price: 13000, img: "/products/metal-wall-clocks/MetalWallClock7.jpeg" },
+      { title: "METAL WALL CLOCK 8", price: 7000, img: "/products/metal-wall-clocks/MetalWallClock8.jpeg" },
+      { title: "METAL WALL CLOCK 9", price: 9000, img: "/products/metal-wall-clocks/MetalWallClock9.jpeg" },
+      { title: "METAL WALL CLOCK 10", price: 16000, img: "/products/metal-wall-clocks/MetalWallClock10.jpeg" },
     ],
   },
   {
@@ -107,23 +113,24 @@ export const categoriesData = [
     description:
       "Vibrant neon wall pieces that add personality and a playful glow to your room.",
     products: [
-      { title: "NEON WALL DECOR 1", price: 14000 },
-      { title: "NEON WALL DECOR 2", price: 16500 },
-      { title: "NEON WALL DECOR 3", price: 12000 },
-      { title: "NEON WALL DECOR 4", price: 18500 },
-      { title: "NEON WALL DECOR 5", price: 15500 },
-      { title: "NEON WALL DECOR 6", price: 20000 },
+      { title: "NEON WALL DECOR 1", price: 14000, img: "/products/neon-wall-decor/NeonWallDecor1.jpeg" },
+      { title: "NEON WALL DECOR 2", price: 16500, img: "/products/neon-wall-decor/NeonWallDecor2.jpeg" },
+      { title: "NEON WALL DECOR 3", price: 12000, img: "/products/neon-wall-decor/NeonWallDecor3.jpeg" },
+      { title: "NEON WALL DECOR 4", price: 18500, img: "/products/neon-wall-decor/NeonWallDecor4.jpeg" },
+      { title: "NEON WALL DECOR 5", price: 15500, img: "/products/neon-wall-decor/NeonWallDecor5.jpeg" },
+      { title: "NEON WALL DECOR 6", price: 20000, img: "/products/neon-wall-decor/NeonWallDecor6.jpeg" },
     ],
   },
 ];
 
 // Flat list (36 products) - baki sab files isi ko use karti hain
-export const productsData = categoriesData.flatMap((cat, catIndex) =>
-  cat.products.map((p, i) => {
-    const id = catIndex * 6 + i + 1; // 1 se 36 tak unique id
+let idCounter = 0;
 
-    // Card wali image (agar nahi di to purani placeholder)
-    const mainImg = p.img || mainImages[i];
+export const productsData = categoriesData.flatMap((cat) =>
+  cat.products.map((p, i) => {
+    const id = ++idCounter; // hamesha unique
+
+    const mainImg = p.img || mainImages[i % mainImages.length];
 
     return {
       id,
@@ -134,8 +141,8 @@ export const productsData = categoriesData.flatMap((cat, catIndex) =>
       description: cat.description,
       price: p.price,
       reviews: 5 + ((id * 7) % 12),
-      img: mainImg,                       // card, cart, checkout, confirmation
-      images: buildImages(mainImg),       // product page: 1st = mainImg, baqi 4 purani
+      img: mainImg,
+      images: buildImages(mainImg),
     };
   })
 );
