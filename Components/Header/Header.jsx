@@ -158,7 +158,7 @@ function Header() {
                 <aside className={`BevoraMainHeader-drawer ${isDrawerOpen ? 'is-open' : ''}`}>
                     <div className="BevoraMainHeader-drawer-top">
                         <div className="BevoraMainHeader-drawer-logo" onClick={() => { router.push('/'); setIsDrawerOpen(false); }}>
-                            <strong>Beyvora</strong> <span>Decor</span>
+                           <img src='/BeyvoraMainLogo1Long.png' alt="" />
                         </div>
                         <button
                             className="BevoraMainHeader-drawer-close"

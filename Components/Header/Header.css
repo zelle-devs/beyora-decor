@@ -370,6 +370,7 @@
 
 .BevoraMainHeader-drawer-footer ul {
     display: flex;
+    display: none;
     flex-direction: column;
     gap: 12px;
     color: var(--beyvora-black);
@@ -390,10 +391,17 @@
     .BevoraMainHeader-containerTop_Left {
         display: none;
     }
-
+    .BevoraMainHeader-logo img{
+        margin-bottom: -5px;
+        width: 150px;
+    }
     .BevoraMainHeader-containerTopBarMain {
         padding: 5px 14px;
         width: 100%;
+    }
+    .BevoraMainHeader-drawer-logo img{
+        width: 150px;
+        margin-bottom: -10px;
     }
 
     .BevoraMainHeader-container {
